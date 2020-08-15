@@ -21,22 +21,15 @@ public class barrage_1 : MonoBehaviour
     private Vector3 noMoveCenter;
     private bool isCenter = false;
     */
-    //位置情報取得じゃないと、オブジェクトもトランスフォームも更新されつづける（同期してるのだと思う）
-    Vector3 centerTP;
-
-    bool isEnd = true;
-
     public IEnumerator Generate(GameObject prefab, int count, GameObject center, float distance, float distance2, bool isLookAtCenter = true)
     {
         List<GameObject> bullets1 = new List<GameObject>();
         List<GameObject> bullets2 = new List<GameObject>();
 
         Vector3 uP = new Vector3(0, 1, 0);
-        if (isEnd == true)
-        {
-            centerTP = center.transform.position;
-            isEnd = false;
-        }
+        // 敵(自分)の位置を設定
+        //位置情報取得じゃないと、オブジェクトもトランスフォームも更新されつづける（同期してるのだと思う）
+        Vector3 centerTP = center.transform.position;
 
         for (int i = 0; i < count; i++)
         {
@@ -80,9 +73,6 @@ public class barrage_1 : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
 
-        isEnd = true;
-
-
         // GameObject型の配列bulletsに、"BarrageBullet1"タグのついたオブジェクトをすべて格納
         //GameObject[] bullets1 = GameObject.FindGameObjectsWithTag("BarrageBullet1");
         //GameObject[] bullets2 = GameObject.FindGameObjectsWithTag("BarrageBullet2");
@@ -91,7 +81,7 @@ public class barrage_1 : MonoBehaviour
         foreach (GameObject bullet in bullets1)
         {
             // z軸を軸にして30度回転させるQuaternionを作成（変数をrotとする）
-            Quaternion rot = Quaternion.AngleAxis(10, Vector3.forward);
+            Quaternion rot = Quaternion.AngleAxis(60, Vector3.forward);
             // 現在の自信の回転の情報を取得する。
             Quaternion q = bullet.transform.rotation;
             // 合成して、自身に設定
@@ -100,7 +90,7 @@ public class barrage_1 : MonoBehaviour
         foreach (GameObject bullet in bullets2)
         {
             // z軸を軸にして30度回転させるQuaternionを作成（変数をrotとする）
-            Quaternion rot = Quaternion.AngleAxis(-10, Vector3.forward);
+            Quaternion rot = Quaternion.AngleAxis(-60, Vector3.forward);
             // 現在の自信の回転の情報を取得する。
             Quaternion q = bullet.transform.rotation;
             // 合成して、自身に設定

@@ -193,13 +193,29 @@ MonoBehaviour:
   shotDelay: 0
   aP1: {x: 0, y: 1.5, z: 0}
   aP2: {x: 0, y: 0, z: 0}
+  aP3: {x: 0, y: 0, z: 0}
+  aP4: {x: 0, y: 0, z: 0}
+  aP5: {x: 0, y: 0, z: 0}
+  aP6: {x: 0, y: 0, z: 0}
   startWait: 0
-  prefab: {fileID: 8499783897877717849, guid: 14410a31c6b40454ba700eb4cd70eec2, type: 3}
-  count: 24
+  prefab1: {fileID: 0}
+  prefab2: {fileID: 0}
+  prefab2_2: {fileID: 0}
+  prefab3: {fileID: 0}
+  movePrefab: {fileID: 0}
+  moveDistance: 0
+  count1: 0
+  count2: 0
+  count2_2: 0
+  count3: 0
   center: {fileID: 3263557522242924974}
-  distance: 1
+  center2: {fileID: 0}
+  distance1: 0
   distance2: 1.15
-  isLookAtCenter: 1
+  distance1_2: 0
+  isLookAtCenter1: 1
+  swirlLength: 0
+  swirlDensity: 0
 --- !u!114 &6269763668297593076
 MonoBehaviour:
   m_ObjectHideFlags: 0

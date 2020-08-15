@@ -13,8 +13,6 @@ public class ShotScript_4 : MonoBehaviour
     {
         GameObject Player = GameObject.Find("Player(Clone)");
 
-        Vector3 myTransform = transform.position;
-
         if(nM == 0)
         {
             Transform shotPosition = transform.GetChild(0);
@@ -67,6 +65,8 @@ public class ShotScript_4 : MonoBehaviour
     {
         Instantiate(bullet, origin.position, origin.rotation);
     }
+
+
 
     // p2からp1への角度を求める
     // @param p1 自分の座標

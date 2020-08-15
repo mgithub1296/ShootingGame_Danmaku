@@ -18,9 +18,6 @@ public class ShotScript : MonoBehaviour
     IEnumerator Start()
     {
         GameObject Player = GameObject.Find("Player(Clone)");
-
-        Vector3 myTransform = transform.position;
-
         // canShotがfalseの場合、ここでコルーチンを終了させる
         if (canShot == false)
         {
